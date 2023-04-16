@@ -15,19 +15,10 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyC5ALLiNht_j9FuBtB8sLwTnuL45cg5tf0",
-    authDomain: "rateadoctor-2c52f.firebaseapp.com",
-    projectId: "rateadoctor-2c52f",
-    storageBucket: "rateadoctor-2c52f.appspot.com",
-    messagingSenderId: "160947965662",
-    appId: "1:160947965662:web:a6ab939cd2f44f51c4bc4f"
-  };
-
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
-const mountedApp = app.mount('#app')
+//const mountedApp = app.mount('#app')
 // console.log(mountedApp)
