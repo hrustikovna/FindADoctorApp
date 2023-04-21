@@ -18,13 +18,15 @@
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import LoginView from './components/LoginView.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    RouterView
+    RouterView,
+    LoginView
   }
 }
 </script>
