@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from "../views/HomeView.vue"
-import AboutView from "../views/AboutView.vue"
-import AppointmentView from "../views/AppointmentView.vue"
-import ContactUsView from "../views/ContactUsView.vue"
-import DepartmentsView from "../views/DepartmentsView.vue"
-import DoctorsView from "../views/DoctorsView.vue"
-import TestimonialsView from "../views/TestimonialsView.vue"
+import HomeView from '../views/HomeView.vue'
+import ServicesView from '../views/ServicesView.vue'
+import AppointmentView from '../views/AppointmentView.vue'
+import ContactsView from '../views/ContactsView.vue'
+import DepartmentsView from '../views/DepartmentsView.vue'
+import DoctorsView from '../views/DoctorsView.vue'
+import TestimonialsView from '../views/TestimonialsView.vue'
 
 
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: AboutView
+      path: '/services',
+      name: 'services',
+      component: ServicesView
     },
     {
       path: '/appointment',
@@ -28,9 +28,9 @@ const router = createRouter({
       component: AppointmentView
     },
     {
-      path: '/contact',
-      name: 'contact',
-      component: ContactUsView
+      path: '/contacts',
+      name: 'contacts',
+      component: ContactsView
     },
     {
       path: '/departments',

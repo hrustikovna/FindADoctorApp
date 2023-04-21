@@ -11,13 +11,14 @@
     ><i class="bi bi-arrow-up-short"></i
   ></a>
 
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
 </template>
 
 <script>
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+
 export default {
   name: 'App',
   components: {
