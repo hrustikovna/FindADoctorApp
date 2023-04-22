@@ -5,6 +5,7 @@
 
       <h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a></h1>
 
+	<!-- .navbar -->
       <nav id="navbar" class="navbar">
         <ul>
           <li><RouterLink to="/">Home</RouterLink></li>
@@ -15,13 +16,14 @@
           <li><RouterLink to="/contacts">Contact Us</RouterLink></li>
         </ul>
       </nav>
-      <!-- .navbar -->
+      
 
-      <RouterLink to="/appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an Appointment</RouterLink>
+      <RouterLink to="/appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an Appointment</span></RouterLink>
 
     </div>
   </header>
-  <!-- End Header -->
+        <!-- End Header -->
+
 </template>
 
 <script>
