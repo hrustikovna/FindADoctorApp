@@ -12,7 +12,7 @@
           <div class="col-lg-4">
             <div class="card-body py-5 px-md-5">
               <!-- First Name input -->
-              <div class="form-outline mb-4">
+              <div class="form-outline mb-4 text-align:left">
                 <input
                   v-model="firstname"
                   type="firstname"

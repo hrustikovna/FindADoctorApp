@@ -17,9 +17,10 @@
         </ul>
       </nav>
       
-      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="loginClicked">Login</span></button>
-      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="registerClicked">Register</span></button>
-      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="logoutClicked">Logout</span></button>
+      <span v-if="userStore.isAuthenticated" class="mb-1">{{ userStore.getUser.name }}</span>
+      <button v-if="!userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="loginClicked"><span class="d-none d-md-inline">Login</span></button>
+      <button v-if="!userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="registerClicked"><span class="d-none d-md-inline">Register</span></button>
+      <button v-if="userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="logoutClicked"><span class="d-none d-md-inline">Logout</span></button>
     </div>
   </header>
         <!-- End Header -->
@@ -30,24 +31,35 @@
 import { logout } from '../data/userRepository';
 import { RouterLink } from 'vue-router';
 import { mapStores } from 'pinia';
-// import { useUserStore } from '../stores/user';
+import {useUserStore} from '../stores/userStore';
+
 
 export default {
-  name: 'AppHeader',
+  name: "AppHeader",
+  props:{
+    user: {
+      type: Object,
+      required: false,
+      default: null
+    }
+  },
+  computed:{
+        ...mapStores(useUserStore)
+  },
   methods: {
     loginClicked() {
-      this.$router.push({name: "login"})
+      this.$router.push({name: "login"});
     },
     registerClicked() {
       this.$router.push({name: "register"})
     },
     logoutClicked() {
       logout().then(() => {
+        this.userStore.logout();
         this.$router.push({name: "home"})
       }).catch((error) => {
         console.log(error)
       });
-
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader :user="userStore.getUser"></AppHeader>
 
   <main id="main">
     <RouterView></RouterView>
@@ -18,6 +18,8 @@
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import { mapStores } from 'pinia';
+import {useUserStore} from './stores/userStore';
 // import LoginView from './components/LoginView.vue'
 
 export default {
@@ -27,7 +29,10 @@ export default {
     AppFooter,
     RouterView,
     // LoginView
-  }
+  },
+  computed:{
+        ...mapStores(useUserStore)
+  },
 }
 </script>
 

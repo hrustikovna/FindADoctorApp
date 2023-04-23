@@ -89,13 +89,23 @@
         </div>
       </div>
     </div>
+    <vue-awesome-paginate
+      :total-items="4"
+      :items-per-page="2"
+      :max-pages-shown="5"
+      :current-page="1"
+      :on-click="onClickHandler"
+    />
   </section>
   <!-- End Doctors Section -->
 </template>
 
-<script>
+<script setup lang="ts">
 export default {
   name: 'DoctorsView'
+}
+const onClickHandler = (page: number) => {
+  console.log(page)
 }
 </script>
 

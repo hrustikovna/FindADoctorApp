@@ -6,6 +6,7 @@ import './assets/vendor/boxicons/css/boxicons.min.css'
 import './assets/vendor/glightbox/css/glightbox.min.css'
 import './assets/vendor/remixicon/remixicon.css'
 import './assets/vendor/swiper/swiper-bundle.min.css'
+import "vue-awesome-paginate/dist/style.css";
 
 import './assets/css/style.css'
 
@@ -16,6 +17,8 @@ import { VueFire, VueFireAuth, VueFireFirestoreOptionsAPI } from 'vuefire'
 
 import App from './App.vue'
 import router from './router'
+import VueAwesomePaginate from "vue-awesome-paginate";
+createApp(App).use(VueAwesomePaginate).mount("#app");
 
 const app = createApp(App)
 
