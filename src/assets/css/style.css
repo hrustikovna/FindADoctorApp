@@ -207,6 +207,7 @@ h6 {
 */
 .appointment-btn {
   margin-left: 25px;
+  border:none;
   background: #1977cc;
   color: #fff;
   border-radius: 50px;

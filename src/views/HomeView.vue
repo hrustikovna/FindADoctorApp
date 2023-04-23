@@ -5,7 +5,7 @@
     <div class="container">
       <h1>Find A Doctor</h1>
       <h2>We will help you to pick up the right Doctor</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <RouterLink to="/appointment" class="btn-get-started scrollto"><span class="d-none d-md-inline">Make an Appointment</span></RouterLink>
     </div>
   </section><!-- End Hero -->
 

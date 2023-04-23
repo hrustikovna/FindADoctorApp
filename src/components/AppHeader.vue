@@ -9,7 +9,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><RouterLink to="/">Home</RouterLink></li>
-          <li><RouterLink to="/services">Services</RouterLink></li>
+          <li><RouterLink to="/about">About</RouterLink></li>
           <li><RouterLink to="/departments">Departments</RouterLink></li>
           <li><RouterLink to="/doctors">Doctors</RouterLink></li>
           <li><RouterLink to="/appointment">Appointment</RouterLink></li>
@@ -17,9 +17,8 @@
         </ul>
       </nav>
       
-
-      <RouterLink to="/appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an Appointment</span></RouterLink>
-
+      <button class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</span></button>
+      <button class="appointment-btn scrollto"><span class="d-none d-md-inline">Logout</span></button>
     </div>
   </header>
         <!-- End Header -->
