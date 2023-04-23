@@ -17,8 +17,9 @@
         </ul>
       </nav>
       
-      <button class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</span></button>
-      <button class="appointment-btn scrollto"><span class="d-none d-md-inline">Logout</span></button>
+      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="loginClicked">Login</span></button>
+      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="registerClicked">Register</span></button>
+      <button class="appointment-btn scrollto"><span class="d-none d-md-inline" @click="logoutClicked">Logout</span></button>
     </div>
   </header>
         <!-- End Header -->
@@ -26,27 +27,29 @@
 </template>
 
 <script>
+import { logout } from '../data/userRepository';
 import { RouterLink } from 'vue-router';
 import { mapStores } from 'pinia';
 // import { useUserStore } from '../stores/user';
 
 export default {
   name: 'AppHeader',
-  components: {
-    RouterLink
-  },
-  // props: {
-  //   user: {
-  //     type: Object,
-  //     required: true
-  //   }
-  // },
-  // computed: {
-  //   ...mapStores(useUserStore)
-  // },
-  // mounted() {
-  //   this.userStore.setName()
-  // }
+  methods: {
+    loginClicked() {
+      this.$router.push({name: "login"})
+    },
+    registerClicked() {
+      this.$router.push({name: "register"})
+    },
+    logoutClicked() {
+      logout().then(() => {
+        this.$router.push({name: "home"})
+      }).catch((error) => {
+        console.log(error)
+      });
+
+    }
+  }
 }
 </script>
 
