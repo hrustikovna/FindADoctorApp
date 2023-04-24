@@ -6,7 +6,8 @@ import AppointmentView from '../views/AppointmentView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import DepartmentsView from '../views/DepartmentsView.vue'
 import DoctorsView from '../views/DoctorsView.vue'
-import TestimonialsView from '../views/TestimonialsView.vue'
+import LoginView from '../views/LoginView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 
 const router = createRouter({
@@ -43,9 +44,14 @@ const router = createRouter({
       component: DoctorsView
     },    
     {
-      path: '/testimonials',
-      name: 'testimonials',
-      component: TestimonialsView
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView
     },
   ]
 })
