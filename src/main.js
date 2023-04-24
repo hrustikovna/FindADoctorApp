@@ -18,7 +18,6 @@ import { VueFire, VueFireAuth, VueFireFirestoreOptionsAPI } from 'vuefire'
 import App from './App.vue'
 import router from './router'
 import VueAwesomePaginate from "vue-awesome-paginate";
-createApp(App).use(VueAwesomePaginate).mount("#app");
 
 const app = createApp(App)
 
@@ -31,6 +30,8 @@ app.use(VueFire, {
             VueFireAuth()
         ]
 })
+app.use(VueAwesomePaginate)
 
 const mountedApp = app.mount('#app')
+
 console.log(mountedApp)

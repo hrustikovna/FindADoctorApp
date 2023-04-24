@@ -100,13 +100,20 @@
   <!-- End Doctors Section -->
 </template>
 
-<script setup lang="ts">
-export default {
-  name: 'DoctorsView'
-}
-const onClickHandler = (page: number) => {
-  console.log(page)
-}
+<script>
+  // import VueAwesomePaginate from "vue-awesome-paginate";
+
+  export default {
+    name: 'DoctorsView',
+    // components: {
+    //   VueAwesomePaginate, 
+    // },
+    methods: {
+      onClickHandler(pageNumber) {
+        console.log("Page Number", pageNumber);
+      }
+    }
+  }
 </script>
 
 <style scoped></style>
