@@ -12,78 +12,22 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-6">
+        <div v-for="doctor in doctors" :key="doctor.id"  class="col-lg-6">
           <div class="member d-flex align-items-start">
             <div class="pic">
-              <img src="../assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="" />
+              <img :src="doctor.imgUrl" class="img-fluid" alt="" />
             </div>
             <div class="member-info">
-              <h4>Walter White</h4>
-              <span>Chief Medical Officer</span>
-              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-              <div class="social">
+              <h4>{{ doctor.name }}</h4>
+              <span>{{ doctor.position }}</span>
+              <p>{{ doctor.description }}</p>
+              <span>{{ doctor.phone }}</span>
+              <!-- <div class="social">
                 <a href=""><i class="ri-twitter-fill"></i></a>
                 <a href=""><i class="ri-facebook-fill"></i></a>
                 <a href=""><i class="ri-instagram-fill"></i></a>
                 <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <div class="member d-flex align-items-start">
-            <div class="pic">
-              <img src="../assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="member-info">
-              <h4>Sarah Jhonson</h4>
-              <span>Anesthesiologist</span>
-              <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4">
-          <div class="member d-flex align-items-start">
-            <div class="pic">
-              <img src="../assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="member-info">
-              <h4>William Anderson</h4>
-              <span>Cardiology</span>
-              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4">
-          <div class="member d-flex align-items-start">
-            <div class="pic">
-              <img src="../assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="member-info">
-              <h4>Amanda Jepson</h4>
-              <span>Neurosurgeon</span>
-              <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -92,7 +36,7 @@
     <vue-awesome-paginate
       :total-items="4"
       :items-per-page="2"
-      :max-pages-shown="5"
+      :max-pages-shown="2"
       :current-page="1"
       :on-click="onClickHandler"
     />
@@ -101,18 +45,20 @@
 </template>
 
 <script>
-  // import VueAwesomePaginate from "vue-awesome-paginate";
+  import getAll from "../data/doctorRepository";
 
   export default {
     name: 'DoctorsView',
-    // components: {
-    //   VueAwesomePaginate, 
-    // },
+    data() {
+      return {
+        doctor: []
+      }
+    },
     methods: {
       onClickHandler(pageNumber) {
         console.log("Page Number", pageNumber);
       }
-    }
+    },
   }
 </script>
 

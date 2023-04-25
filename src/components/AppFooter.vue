@@ -7,7 +7,7 @@
     <div class="row">
 
       <div class="col-lg-3 col-md-6 footer-contact">
-        <h3>Medilab</h3>
+        <h3>Find A Doctor</h3>
         <p>
           1 Forks Market Rd<br>
           Winnipeg, MB R3C 4L8<br>

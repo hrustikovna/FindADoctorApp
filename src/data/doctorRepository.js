@@ -5,7 +5,7 @@ import {
 } from 'vuefire'
 import { collection, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
 
-export async function getAll() {
+export default async function getAll() {
   const doctors = []
   const querySnapshot = await getDocs(collection(useFirestore(), 'doctors'))
   querySnapshot.forEach((doc) => {
@@ -52,8 +52,8 @@ function _createDoctor(doctor) {
     name: doctor.name,
     position: doctor.position,
     description: doctor.description,
-    yearsOfExperience: doctor.yearsOfExperience,
-    imgUrl: doctor.imgUrl
+    phone:doctor.phone,
+    imgURL: doctor.imgUrl
   }
 
   return payload
