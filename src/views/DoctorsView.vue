@@ -46,6 +46,7 @@
 
 <script>
   import getAll from "../data/doctorRepository";
+import { useUserStore } from "../stores/userStore";
 
   export default {
     name: 'DoctorsView',
@@ -54,6 +55,9 @@
         doctor: []
       }
     },
+    computed: {
+      ...mapStores(useUserStore)
+    }
     methods: {
       onClickHandler(pageNumber) {
         console.log("Page Number", pageNumber);
