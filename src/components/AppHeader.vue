@@ -17,7 +17,7 @@
         </ul>
       </nav>
       
-      <span v-if="userStore.isAuthenticated" class="mb-1">{{ userStore.getUser.name }}</span>
+      <span v-if="userStore.isAuthenticated" class="mb-1 p-4">{{ userStore.getUser.name }}</span>
       <button v-if="!userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="loginClicked"><span class="d-none d-md-inline">Login</span></button>
       <button v-if="!userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="registerClicked"><span class="d-none d-md-inline">Register</span></button>
       <button v-if="userStore.isAuthenticated" class="appointment-btn scrollto" type="submit" @click.prevent="logoutClicked"><span class="d-none d-md-inline">Logout</span></button>
@@ -65,4 +65,5 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
