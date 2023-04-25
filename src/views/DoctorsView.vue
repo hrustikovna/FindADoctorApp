@@ -34,7 +34,7 @@
       </div>
     </div>
     <vue-awesome-paginate
-      :total-items="4"
+      :total-items="8"
       :items-per-page="2"
       :max-pages-shown="2"
       :current-page="1"
