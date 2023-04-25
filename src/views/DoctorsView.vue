@@ -59,6 +59,9 @@
         console.log("Page Number", pageNumber);
       }
     },
+    async mounted() {
+    this.doctors - await getAll();
+    }
   }
 </script>
 
