@@ -1,5 +1,5 @@
 <template>
-  <AppHeader :user="userStore.getUser"></AppHeader>
+  <AppHeader :user="user"></AppHeader>
 
   <main id="main">
     <RouterView></RouterView>
@@ -31,7 +31,10 @@ export default {
     // LoginView
   },
   computed:{
-        ...mapStores(useUserStore)
+    ...mapStores(useUserStore),
+    user() {
+      return this.userStore.getUser;
+    }
   },
 }
 </script>
