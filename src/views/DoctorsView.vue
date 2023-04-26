@@ -36,6 +36,14 @@
           No doctors found at the moment, please check here later
         </p>
       </div>
+      <PaginationComponent 
+            v-if="products.length > 0"
+            :totalPages="0"
+            v-model="currentPage"
+            @previousPage="previousPage()"
+            @nextPage="nextPage()"
+            @gotoPage="gotoPage($event)"
+        ></PaginationComponent>
       <div v-if="doctors" class="row">
         <div class="col"></div>
         <div class="col">
