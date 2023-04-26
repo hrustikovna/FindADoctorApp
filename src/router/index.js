@@ -29,7 +29,7 @@ const router = createRouter({
       path: '/appointment',
       name: 'appointment',
       component: AppointmentView,
-      meta: { auth: false },
+      meta: { auth: true },
     },
     {
       path: '/contacts',
@@ -62,9 +62,9 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const userStore = useUserStore();
   
-//   if(to.meta.auth && (userStore.isAuthenticated){ 
-//        return { name: "login"};
-// })
+  if(to.meta.auth && !userStore.isAuthenticated){ 
+       return { name: "login"};
+}
 });
 
 export default router;

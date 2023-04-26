@@ -66,8 +66,14 @@
 
 <script>
     export default {
-        name:"AppointmentView"
-    }
+        name:"AppointmentView",
+        // mounted() {
+        // if(this.userStore.isAutheticated) {
+        //     this.$router.push({ name: 'login'});
+          
+        // }
+    },
+
 </script>
 
 <style scoped></style>
