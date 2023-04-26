@@ -14,7 +14,7 @@
         <div v-for="doctor in doctors" :key="doctor.id"  class="col-lg-6">
           <div class="member d-flex align-items-start">
             <div class="pic">
-              <img :src="doctor.imgUrl" class="img-fluid" alt="" />
+              <img :src="doctor.imgURL" class="img-fluid" alt="" />
             </div>
             <div class="member-info">
               <h4>{{ doctor.name }}</h4>
