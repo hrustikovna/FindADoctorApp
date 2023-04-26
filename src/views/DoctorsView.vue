@@ -14,7 +14,7 @@
         <div v-for="doctor in doctors" :key="doctor.id"  class="col-lg-6">
           <div class="member d-flex align-items-start">
             <div class="pic">
-              <img :src="doctor.imgUrl" class="img-fluid" alt="" />
+              <img :src="doctor.imgURL" class="img-fluid" alt="" />
             </div>
             <div class="member-info">
               <h4>{{ doctor.name }}</h4>
@@ -36,14 +36,23 @@
           No doctors found at the moment, please check here later
         </p>
       </div>
+      <div v-if="doctors" class="row">
+        <div class="col"></div>
+        <div class="col">
+          <vue-awesome-paginate
+          :total-items="8"
+          :items-per-page="2"
+          :max-pages-shown="2"
+          :on-click="onClickHandler"
+          v-model="currentPage"
+          class="my-5"
+        />
+        </div>
+        <div class="col"></div>
+        
+      </div>
     </div>
-    <!-- <vue-awesome-paginate
-      :total-items="8"
-      :items-per-page="2"
-      :max-pages-shown="2"
-      :current-page="1"
-      :on-click="onClickHandler"
-    /> -->
+    
   </section>
   <!-- End Doctors Section -->
 </template>
@@ -57,7 +66,8 @@
     name: 'DoctorsView',
     data() {
       return {
-        doctors: []
+        doctors: [],
+        currentPage: 1
       }
     },
     computed: {
